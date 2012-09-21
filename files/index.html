@@ -24,19 +24,37 @@
 <html>
 <head>
 
-<script src=""></script>
+<script src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
+
+	<style>
+		body {
+			margin0;
+			background:teal;
+			}
+			</style>
 
 
-<!--
+
 <script>
+
+
+	$(function()
+
+
 	$(function(){
 
-	$.ajax
-
+	$.ajax({
+			url:http://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=everyplace
+			dataType:'jsonp',
+			success:function(d){
+				console.log(d);
+				
+				}
+			});
+  
 
 	});	
--->
-
+	</script>
 
 </head>
 
