@@ -39,17 +39,56 @@
 
 
 	$(function(){
-		console.log('hello');
-		});
 	
+	console.log('hellllllo');
+	console.log(3+3);
 	
 	
 	$.ajax({
 			url:'http://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=wholefoods',
 			dataType:'jsonp',
-			success:function(d){
-				//console.log(d);
-				console.log('we are doing awesome things');
+			success:function(response){
+				console.log(response);
+				
+				document.twitter = response;
+				$.each(response,function(index,tweet){
+				
+				console.log(response);
+				
+				var text = tweet['text'];
+				
+					
+				
+				
+				
+				
+				if(tweet.entities.urls){
+					$.each(tweet.entities.urls,function(inde,url){
+					
+					text = text.replace(url.url,'<a href="'+url.expanded_url+'">'+url.display_url+'</a>');
+					
+					});
+					
+				}
+				
+				
+				if(text.substr(0,1)==='@'){				
+								
+					$('#tweets').append('<li>'+text+'</li>');
+				}
+				
+				else if(text.substring(0,2)==='RT')
+				{
+					$('#retweets').append('<li>'+text+'</li>');
+				}
+				else
+				{
+					$('#messages').append('<li>'+text+'</li>');
+				}
+				
+				});
+				
+				
 				},
 				
 				error: function(){
@@ -57,20 +96,29 @@
 					}
 				
 			});
+			
+		});
   
 	
-	</script>
+</script>
+
 
 </head>
 
 <body>
 
-
-
+	<ul id="tweets">
+<!--
 <p>
 <img src="http:\/\/a0.twimg.com\/profile_images\/873116985\/2576_71914761487_24922591487_2668727_5100669_n_normal.jpg" />
-hello
+'hello world'
 </p>
+-->
 
+	</ul>
+	<ul id="messages"></ul>
+	<ul id="retweets"></ul>
+	
+	
 </body>
 </html>
