@@ -4,12 +4,9 @@ between the original tweet and retweeted tweets.
 
 <table>
   <tr>
-    <th>ID</th><th>Name</th><th>Rank</th>
+    <th>tweet</th><th>time of tweet</th><th>time of retweet</th><th>how long did it take?</th>
   </tr>
   <tr>
-    <td>1</td><td>Tom Preston-Werner</td><td>Awesome</td>
-  </tr>
-  <tr>
-    <td>2</td><td>Albert Einstein</td><td>Nearly as awesome</td>
+    <td>"E=mc^2" -Albert Einstein</td><td>12:10</td><td>12:12</td><td>00:02</td>
   </tr>
 </table>
