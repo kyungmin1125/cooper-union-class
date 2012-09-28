@@ -37,71 +37,59 @@
 
 <script>
 
-
-
-	$(function(){
-	
-	console.log('hellllllo');
-	console.log(3+3);
-	
-	
-	$.ajax({
-			url:'http://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=wholefoods',
-			dataType:'jsonp',
-			success:function(response){
-				console.log(response);
-				
-				document.twitter = response;
-				$.each(response,function(index,tweet){
-				
-				console.log(response);
-				
-				var text = tweet['text'];
-				
-					
-				
-				
-				
-				
-				if(tweet.entities.urls){
-					$.each(tweet.entities.urls,function(inde,url){
-					
-					text = text.replace(url.url,'<a href="'+url.expanded_url+'">'+url.display_url+'</a>');
-					
+	if(localStorage.twitterSearch) {
+		
+		var twitterData = JSON.parse(localStorage.twitterSearch),
+			formattedData = [];
+		
+			$.each(twitterData, function(index,tweet){
+			
+			
+			
+			var text=tweet.text;
+			
+			
+			if(tweet.entities)  //if entities exist, execute
+			{
+							
+			if(tweet.entities.urls){
+				$.each(tweet.entities.urls, function(index, url)
+					{
+					text=text.replace(url.url, '<a href="'+url.expanded_url+'">'+url.display_url+'</a>');	
 					});
-					
 				}
+			}
+			
+			
+				formattedData.push({text: text,
+									from_user_name: tweet.from_user_name
+									});
+									
+				localStorage.formattedData = JSON.stringify(formattedData);
+				console.log('hurray!');
+				//console.log(localStorage.formattedData);
 				
-				
-				if(text.substr(0,1)==='@'){				
+			});
 								
-					$('#tweets').append('<li>'+text+'</li>');
-				}
-				
-				else if(text.substring(0,2)==='RT')
-				{
-					$('#retweets').append('<li>'+text+'</li>');
-				}
-				else
-				{
-					$('#messages').append('<li>'+text+'</li>');
-				}
-				
-				});
-				
-				
-				},
-				
-				error: function(){
-					console.log("damn, I am sad");
+	}
+		
+	else{
+		
+		localStorage.myData={};
+			
+	}
+			
+	$.ajax({
+				url:'http://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=wholefoods&count=10',
+				dataType:'jsonp',
+				success:function(response){
+					localStorage.twitterSearch = JSON.stringify(response);
+					console.log('I think that worked');
 					}
 				
 			});
-			
-		});
   
-	
-</script>
+	</script>
 
 
 </head>
