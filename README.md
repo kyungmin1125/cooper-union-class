@@ -7,6 +7,6 @@ between the original tweet and retweeted tweets.
     <th>tweet</th><th>time of tweet</th><th>time of retweet</th><th>how long did it take?</th>
   </tr>
   <tr>
-    <th>"E=mc^2" -Albert Einstein</th><td>12:10</td><td>12:12</td><td>00:02</td>
+    <td>"E=mc^2" -Albert Einstein</td><td>12:10</td><td>12:12</td><td>00:02</td>
   </tr>
 </table>
