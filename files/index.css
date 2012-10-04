@@ -1,0 +1,41 @@
+
+body
+{
+background-image:url('http://www.mediabistro.com/alltwitter/files/2011/03/twitter-pen.png');
+background-attachment:fixed;
+background-position:center right; 
+
+}
+
+#tweetbox
+{
+border:2px solid #a1a1a1;
+padding:10px 100px; 
+background:#b0c4de;
+width:300px;
+border-radius:25px;
+}
+
+#resultbox
+{
+border:2px solid #a1a1a1;
+padding:10px 100px; 
+background:#CD6090;
+width:300px;
+border-radius:25px;
+}
+
+#inputbox
+{
+border:2px solid #a1a1a1;
+background:#FFFFFF;
+padding:10px 40px; 
+width:300px;
+border-radius:25px;
+}
+
+#font
+{
+font-family:monospace;
+font-size:130%;
+}
