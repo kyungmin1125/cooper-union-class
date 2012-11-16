@@ -16,7 +16,6 @@ function consumer() {
 app.configure('development', function(){
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
   app.use(express.logger());
-  app.use(express.cookieDecoder());
   app.use(express.session());
 });
 
