@@ -13,17 +13,8 @@ function consumer() {
     _twitterConsumerKey, _twitterConsumerSecret, "1.0A", "http://badgestar.com/sessions/callback", "HMAC-SHA1");   
 }
 
-app.configure('development', function(){
-  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-  app.use(express.logger());
-  app.use(express.session());
-});
 
-app.dynamicHelpers({
-  session: function(req, res){
-    return req.session;
-  }
-});
+
 
 app.get('/', function(req, res){
   res.send('Hello World');
