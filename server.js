@@ -14,6 +14,7 @@ function consumer() {
 }
 
 
+app.use(express.cookieSession());
 
 
 app.get('/', function(req, res){
