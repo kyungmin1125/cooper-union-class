@@ -1,0 +1,14 @@
+{
+  "name": "cooper-union-class",
+  "version": "0.0.1",
+  "description": "Demo app for Cooper Union guest lecture",
+  "dependencies": {
+    "express":"*",
+    "sys":"*",
+    "oauth":"*"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  }
+}
