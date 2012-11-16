@@ -14,7 +14,7 @@ function consumer() {
 }
 
 
-app.use(express.cookieSession());
+app.use(express.cookieSession({"secret":"twitter"}));
 
 
 app.get('/', function(req, res){
