@@ -1,7 +1,6 @@
 var express = require('express');
-var sys = require('sys');
 var oauth = require('oauth');
-var util = require('util'),
+var util = require('util');
 var twitter = require('twitter');
 
 var app = express();
