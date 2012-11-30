@@ -1,9 +1,9 @@
-var express = require('express');
-var oauth = require('oauth');
+// var express = require('express');
+// var oauth = require('oauth');
 var util = require('util');
 var twitter = require('twitter');
 
-var app = express();
+// var app = express();
 
 var twit = new twitter({
     consumer_key: '0AryNjToIG2Alt7Sdc31gg',
